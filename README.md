@@ -51,6 +51,19 @@ python3 combine_by_toc.py <toc_file.md> <folder_with_md_files> -o combined.md
 
 ---
 
+### `deduplicate_md.py`
+
+Scans a Markdown file and finds **continuous duplicate sections** (identical heading + content blocks appearing more than once).  
+It moves all duplicate sections to an **Appendix** at the end, and inserts a reference link at every spot where a duplicate was removed.
+
+**Usage in Terminal:**
+
+```bash
+python3 deduplicate_md.py <input.md> <output.md>
+```
+
+---
+
 ### `docx2md.py`
 
 Converts a folder of **`.doc` / `.docx` Word files** to Markdown:
