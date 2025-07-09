@@ -1,6 +1,6 @@
 # 🧰 Mac-Friendly Office Tools (Python)
 
-These are lightweight Python scripts built for common office tasks — like turning images into slides, converting PDFs, or splitting multi-page image files. No coding experience needed. If you're a designer, executive assistant, or just someone who works with documents a lot, you're in the right place.
+These are lightweight Python scripts built for common office tasks — like turning images into slides, converting PDFs, cleaning up HTML, or splitting multi-page image files. No coding experience needed. If you're a designer, executive assistant, or just someone who works with documents a lot, you're in the right place.
 
 ---
 
@@ -18,7 +18,7 @@ These are lightweight Python scripts built for common office tasks — like turn
 In Terminal, install the required Python libraries:
 
 ```bash
-pip3 install pillow python-pptx pymupdf
+pip3 install pillow python-pptx pymupdf beautifulsoup4 markdownify
 ```
 
 If `pip3` isn't found, install it first with:
@@ -69,13 +69,46 @@ python3 extract_pages.py <input_file.png>
 
 ---
 
+### `clean_html.py`
+
+Cleans an HTML file or fragment by removing:
+- Inline SVGs
+- All classes and ids
+- aria-* attributes
+- style attributes
+- (And more clutter)
+
+Great for preparing HTML for documentation or markdown conversion.
+
+**Usage in Terminal:**
+
+```bash
+python3 clean_html.py <input_file.html> <output_file.html>
+```
+
+---
+
+### `html2md.py`
+
+Converts an HTML list or fragment into a clean, readable markdown list. Ideal for moving web-based outlines or lists into markdown docs.
+
+**Usage in Terminal:**
+
+```bash
+python3 html2md.py <input_file.html> <output_file.md>
+```
+
+---
+
 ## 🔧 Requirements Summary
 
-| Library       | Purpose                           |
-|---------------|------------------------------------|
-| `pillow`      | Image loading and saving           |
-| `python-pptx` | Creating PowerPoint (.pptx) files  |
-| `pymupdf`     | Reading and exporting PDF pages    |
+| Library          | Purpose                               |
+|------------------|----------------------------------------|
+| `pillow`         | Image loading and saving               |
+| `python-pptx`    | Creating PowerPoint (.pptx) files      |
+| `pymupdf`        | Reading and exporting PDF pages        |
+| `beautifulsoup4` | HTML parsing and cleanup               |
+| `markdownify`    | Converting HTML to Markdown            |
 
 ---
 
