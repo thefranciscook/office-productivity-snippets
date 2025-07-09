@@ -1,6 +1,6 @@
-# 🧰 Mac-Friendly Office Tools (Python)
+# 🧰 Mac‑Friendly Office Tools (Python)
 
-These lightweight Python scripts help with everyday office tasks — like turning images into slides, converting PDFs, **converting Word documents to Markdown**, cleaning up HTML, or splitting multi‑page image files. No coding experience needed. If you're a designer, executive assistant, or just someone who works with documents a lot, you're in the right place.
+These lightweight Python scripts help with everyday office tasks — like turning images into slides, converting PDFs, **converting Word documents to Markdown**, cleaning up HTML, **merging Markdown files based on a Table of Contents**, or splitting multi‑page image files. No coding experience needed. If you're a designer, executive assistant, or just someone who works with documents a lot, you're in the right place.
 
 ---
 
@@ -32,6 +32,24 @@ Then rerun the install command.
 ---
 
 ## 📦 What Each Script Does
+
+### `combine_by_toc.py`
+
+Merges a folder of Markdown files into **one combined document** that follows the order and hierarchy of a bullet‑list Table of Contents (ToC) file.  
+Features:
+
+- Fuzzy matching between ToC entries and filenames (handles punctuation, spaces, URL‑encoding).  
+- Skips headings that have no matching file.  
+- Appends any “orphan” Markdown files under an **Unreferenced files** section.  
+- Uses only the Python standard library.
+
+**Usage in Terminal:**
+
+```bash
+python3 combine_by_toc.py <toc_file.md> <folder_with_md_files> -o combined.md
+```
+
+---
 
 ### `docx2md.py`
 
@@ -121,14 +139,15 @@ python3 html2md.py <input_file.html> <output_file.md>
 
 ## 🔧 Requirements Summary
 
-| Library          | Purpose                                |
-|------------------|----------------------------------------|
-| `pillow`         | Image loading and saving               |
-| `python-pptx`    | Creating PowerPoint (.pptx) files      |
-| `pymupdf`        | Reading and exporting PDF pages        |
-| `beautifulsoup4` | HTML parsing and cleanup               |
-| `markdownify`    | Converting HTML to Markdown            |
-| `python-docx`    | Reading `.docx` files for conversion   |
+| Library          | Purpose                                   |
+|------------------|-------------------------------------------|
+| `pillow`         | Image loading and saving                  |
+| `python-pptx`    | Creating PowerPoint (.pptx) files         |
+| `pymupdf`        | Reading and exporting PDF pages           |
+| `beautifulsoup4` | HTML parsing and cleanup                  |
+| `markdownify`    | Converting HTML to Markdown               |
+| `python-docx`    | Reading `.docx` files for conversion      |
+| — (stdlib only)  | `combine_by_toc.py` — no extra libraries  |
 
 ---
 
